@@ -5,7 +5,7 @@ import { ChatHandler } from './chat';
 import { API_RESPONSES } from './config';
 import { getSupabaseClient } from './supabase';
 const VALID_STATUSES: PointStatus[] = ['Open', 'In Progress', 'Resolved', 'Closed'];
-export class ProjectAgent extends Agent<Env> {
+export class ChatAgent extends Agent<Env> {
   private chatHandler?: ChatHandler;
   async onStart(): Promise<void> {
     this.chatHandler = new ChatHandler(
@@ -170,3 +170,5 @@ export class ProjectAgent extends Agent<Env> {
     }
   }
 }
+
+export { ChatAgent as ProjectAgent };
